@@ -1,6 +1,4 @@
-
-
-#Para hacer instalar cosas comunes al front y back.
+#Para  instalar cosas comunes al front y back.
 - hosts: all
   become: yes
   become_user: root
