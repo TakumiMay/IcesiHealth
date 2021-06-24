@@ -8,12 +8,12 @@
 
 variable "back_sg_description" {
   type    = string
-  default = "Security group for the back instance"
+  default = "Security group for the back instance - Automatizacion Group3"
 }
 
 variable "back_sg_ingress_ssh_description" {
   type    = string
-  default = "Allowed SSH from anywhere"
+  default = "Allowed SSH from anywhere - Automatizacion Group3"
 }
 
 variable "back_sg_ingress_ssh_port" {
@@ -41,7 +41,7 @@ variable "back_sg_ingress_ssh_cird" {
 variable "back_sg_ingress_app_description" {
   type        = string
   default     = "Allow traffic trough port 8080 from anywhere"
-  description = "This is the description for the inbound rule that allowed traffic through the port 8080 from the internet to the backend"
+  description = "This is the description for the inbound rule that allowed traffic through the port 8080 from the internet to the backend - Automatizacion Group3"
 }
 
 variable "back_sg_ingress_app_port" {
@@ -68,7 +68,7 @@ variable "back_sg_ingress_app_cird" {
 
 variable "back_sg_egress_description" {
   type    = string
-  default = "Outbound rule"
+  default = "Outbound rule - Automatizacion Group3"
 }
 
 variable "back_sg_egress_port" {
@@ -93,25 +93,25 @@ variable "back_sg_egress_cird" {
 
 ##variable "lb_sg_description" {
 ##  type    = string
-##  default = "load balancer security group"
+##  default = "load balancer security group - Automatizacion Group3"
 ##}
 
 ##variable "lb_sg_in_traffic_description" {
 ##  type        = string
 ##  default     = "Allowed traffic from anywhere"
-##  description = "This is the description for the inbound rule that allowed traffic to the load balancer"
+##  description = "This is the description for the inbound rule ##that allowed traffic to the load balancer - Automatizacion Group3"
 ##}
 
 ##variable "lb_sg_in_traffic_port" {
 ##  type        = number
 ##  default     = 8080
-##  description = "This is the port for the inbound rule that allowed traffic to the load balancer"
+##  description = "This is the port for the inbound rule that ##allowed traffic to the load balancer"
 ##}
 
 ##variable "lb_sg_in_traffic_protocol" {
 ##  type        = string
 ##  default     = "tcp"
-##  description = "This is the protocol for the inbound rule that allowed traffic to the load balancer"
+##  description = "This is the protocol for the inbound rule that ##allowed traffic to the load balancer"
 ##}
 
 ##variable "lb_sg_in_traffic_cird" {

@@ -8,9 +8,19 @@ variable "automation_vpc_id" {
   default = "vpc-00537cce805fc40d5"
 }
 
+variable "igw_id" {
+  type = string
+  default = "igw-0c3e27d4c87626093"
+}
+
 variable "public_subnet_id_2a" {
   type    = string
   default = "subnet-0578b7c357c451a05"
+}
+
+variable "public_subnet_id_2c" {
+  type	  = string
+  default = "subnet-0e5a412dadcc7aec8"
 }
 
 variable "private_subnet_id_2a" {

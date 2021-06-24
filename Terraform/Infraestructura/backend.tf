@@ -172,3 +172,17 @@ resource "aws_lb_listener" "http-back" {
     target_group_arn = aws_lb_target_group.back-target-group.arn
   }
 }
+
+#################################
+## Resource to create endpoint ##
+#################################
+
+##resource "aws_vpc_endpoint" "ep_back" {
+##  vpc_id            = aws_vpc.main.id
+##  service_name      = "com.amazonaws.us-east-2.dynamodb"
+##  vpc_endpoint_type = "Interface"
+
+##  security_group_ids = [ aws_security_group.sg-back-instance.id, ]
+
+##  private_dns_enabled = true
+##}

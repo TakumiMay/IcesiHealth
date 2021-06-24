@@ -8,12 +8,12 @@
 
 variable "front_sg_description" {
   type    = string
-  default = "Security group for the front instance"
+  default = "Security group for the front instance - Automatizacion Group3"
 }
 
 variable "front_sg_ingress_ssh_description" {
   type    = string
-  default = "Allowed SSH from anywhere"
+  default = "Allowed SSH from anywhere - Automatizacion Group3"
 }
 
 variable "front_sg_ingress_ssh_port" {
@@ -41,7 +41,7 @@ variable "front_sg_ingress_ssh_cird" {
 variable "front_sg_ingress_app_description" {
   type        = string
   default     = "Allow traffic trough port 8080 from anywhere"
-  description = "This is the description for the inbound rule that allowed traffic through the port 8080 from the internet to the frontend"
+  description = "This is the description for the inbound rule that allowed traffic through the port 8080 from the internet to the frontend - Automatizacion Group3"
 }
 
 variable "front_sg_ingress_app_port" {
@@ -68,7 +68,7 @@ variable "front_sg_ingress_app_cird" {
 
 variable "front_sg_egress_description" {
   type    = string
-  default = "Outbound rule"
+  default = "Outbound rule - Automatizacion Group3"
 }
 
 variable "front_sg_egress_port" {
@@ -93,13 +93,13 @@ variable "front_sg_egress_cird" {
 
 variable "lb_sg_description" {
   type    = string
-  default = "load balancer security group"
+  default = "load balancer security group - Automatizacion Group3"
 }
 
 variable "lb_sg_in_traffic_description" {
   type        = string
   default     = "Allowed traffic from anywhere"
-  description = "This is the description for the inbound rule that allowed traffic to the load balancer"
+  description = "This is the description for the inbound rule that allowed traffic to the load balancer - Automatizacion Group3"
 }
 
 variable "lb_sg_in_traffic_port" {
@@ -149,12 +149,12 @@ variable "front_tg_target_type" {
 
 variable "front_tg_protocol" {
   type    = string 
-  default = "GENEVE"
+  default = "HTTP"
 }
 
 variable "front_tg_port" {
   type    = number
-  default = 6081
+  default = 8080
 }
 
 #############################
@@ -168,7 +168,7 @@ variable "front_lb_name" {
 
 variable "front_lb_type" {
   type    = string
-  default = "gateway"
+  default = "application"
 }
 
 variable "front_lbl_protocol" {

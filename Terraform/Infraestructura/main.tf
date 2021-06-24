@@ -19,6 +19,10 @@ data "aws_subnet" "public-subnet-2a" {
   id = var.public_subnet_id_2a
 }
 
+data "aws_subnet" "public-subnet-2c" {
+  id = var.public_subnet_id_2c
+}
+
 data "aws_subnet" "private-subnet-2a" {
   id = var.private_subnet_id_2a
 }

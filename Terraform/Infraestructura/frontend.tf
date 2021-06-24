@@ -104,7 +104,7 @@ resource "aws_autoscaling_group" "front-tf-automation-asg" {
   max_size            = 2
   min_size            = 0
   desired_capacity    = 1
-  vpc_zone_identifier = [ data.aws_subnet.public-subnet-2a.id, data.aws_subnet.public-subnet-2a.id ]
+  vpc_zone_identifier = [ data.aws_subnet.public-subnet-2a.id, data.aws_subnet.public-subnet-2c.id ]
   target_group_arns   = [ aws_lb_target_group.front-target-group.arn ]
 
   launch_template {
@@ -122,18 +122,18 @@ resource "aws_autoscaling_group" "front-tf-automation-asg" {
 ########################################
 
 resource "aws_lb_target_group" "front-target-group" {
-#  target_type = var.front_tg_target_type
+  target_type = var.front_tg_target_type
   protocol    = var.front_tg_protocol
   port        = var.front_tg_port
   vpc_id      = data.aws_vpc.automation-vpc.id
 
   health_check {
-#    path                = "/"
+    path                = "/"
     protocol            = "HTTP"
     port		= 80
-#    matcher             = "200"
-#    interval            = 30
-#    timeout             = 5
+    matcher             = "200"
+    interval            = 30
+    timeout             = 5
     healthy_threshold   = 5
     unhealthy_threshold = 2 
   }
@@ -150,8 +150,8 @@ resource "aws_lb_target_group" "front-target-group" {
 resource "aws_lb" "front-tf-gateway-load-balancer" {
   name               = var.front_lb_name
   load_balancer_type = var.front_lb_type
-  subnets            = [ data.aws_subnet.public-subnet-2a.id, data.aws_subnet.public-subnet-2a.id ]
-#  security_groups    = [ aws_security_group.sg-load-balancer-front.id ]
+  subnets            = [ data.aws_subnet.public-subnet-2a.id, data.aws_subnet.public-subnet-2c.id ]
+  security_groups    = [ aws_security_group.sg-load-balancer-front.id ]
 
   tags = {
       "responsible" = var.tag_responsible
@@ -164,8 +164,8 @@ resource "aws_lb" "front-tf-gateway-load-balancer" {
  
 resource "aws_lb_listener" "http-front" {
   load_balancer_arn = aws_lb.front-tf-gateway-load-balancer.id
-#  protocol          = var.front_lbl_protocol
-#  port              = var.front_lbl_port
+  protocol          = var.front_lbl_protocol
+  port              = var.front_lbl_port
 
   default_action {
     type             = "forward"
